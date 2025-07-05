@@ -152,12 +152,12 @@ export default function Projects() {
         <div className="flex items-center justify-between md:justify-start">
           <Link href="/" className="text-2xl text-[#585858] dark:text-[#acacac] font-bold transform rotate-12">
             <img
-              src="./flower-light.png"
+              src="/flower-light.png"
               alt="Light Flower"
               className="w-16 h-16 md:w-20 md:h-20 block dark:hidden"
             />
             <img
-              src="./flower-dark.png"
+              src="/flower-dark.png"
               alt="Dark Flower"
               className="w-16 h-16 md:w-20 md:h-20 hidden dark:block"
             />
