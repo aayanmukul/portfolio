@@ -25,8 +25,7 @@ export default function Experience() {
       period: "May 2025 - Present",
       description: "Robotics and autonomous systems research",
       details: [
-        "Engineering communication systems for autonomous mobile robots, focusing on system integration and microelectronic applications for defense technologies.",
-        "Programming a robust autonomous multi-agent coordination and communication system using a novel jam-resistant wireless method constrained to line-of-sight, enhancing resilience in contested environments."
+        ""
         // "Developed MATLAB/Simulink models for DC-DC converter optimization in solar PV systems",
         // "Designed and implemented maximum power point tracking (MPPT) algorithms using perturb-and-observe method", 
         // "Conducted efficiency analysis of buck-boost converters under varying load conditions",
