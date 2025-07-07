@@ -8,8 +8,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "EE Portfolio – Electrical Engineering Student at Georgia Tech",
-  description: "Electrical engineering portfolio showcasing projects in power systems, digital signal processing, and renewable energy technologies. Georgia Tech EE student with experience in research and industry.",
+  title: "Aayan's Portfolio – EE @ Georgia Tech",
+  description: "Electrical engineering portfolio showcasing projects in power systems, circuit technology, and renewable energy technologies. Georgia Tech EE student with experience in research and industry.",
+  icons: {
+    icon: "/flower-dark.png",
+    shortcut: "/flower-dark.png",
+    apple: "/flower-dark.png",
+  },
 };
 
 export default function RootLayout({
