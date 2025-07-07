@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Aayan's Portfolio – EE @ Georgia Tech",
-  description: "Electrical engineering portfolio showcasing projects in power systems, circuit technology, and renewable energy technologies. Georgia Tech EE student with experience in research and industry.",
+  description: "Electrical engineering portfolio showcasing projects in power systems, digital signal processing, and renewable energy technologies. Georgia Tech EE student with experience in research and industry.",
   icons: {
     icon: "/flower-dark.png",
     shortcut: "/flower-dark.png",

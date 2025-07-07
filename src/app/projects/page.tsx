@@ -33,10 +33,7 @@ export default function Projects() {
         "Integrated the neuromorphic processor with ROS-based robotic systems for real-time control",
         "Achieved 40% reduction in power consumption compared to traditional von Neumann architectures for robotic applications"
       ],
-      images: [
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
-      ],
+      images: [], // No images for this project
       documents: [
         { name: "Design Report.pdf", url: "#" },
         { name: "Verilog Code.pdf", url: "#" }
@@ -85,10 +82,7 @@ export default function Projects() {
         "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800",
         "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800"
       ],
-      documents: [
-        { name: "Project Report.pdf", url: "#" },
-        { name: "Code Documentation.pdf", url: "#" }
-      ]
+      documents: [] // No documents for this project
     },
     {
       id: "solar-mppt",
@@ -105,10 +99,7 @@ export default function Projects() {
         "Integrated LCD display and data logging capabilities for performance monitoring",
         "Conducted extensive testing under varying irradiance and temperature conditions"
       ],
-      images: [
-        // "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800",
-        // "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800"
-      ],
+      images: [], // No images for this project
       documents: [
         { name: "Design Specifications.pdf", url: "#" },
         { name: "Test Results.pdf", url: "#" }
@@ -224,37 +215,41 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* Project Images */}
-              <div className="mb-6">
-                <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Gallery</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {project.images.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image}
-                      alt={`${project.title} ${index + 1}`}
-                      className="w-full h-48 object-cover border border-[#dcdcdc] dark:border-[#4a4a4a] hover:opacity-80 transition-opacity cursor-pointer"
-                    />
-                  ))}
+              {/* Project Images - Only show if images exist */}
+              {project.images && project.images.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Gallery</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {project.images.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={`${project.title} ${index + 1}`}
+                        className="w-full h-48 object-cover border border-[#dcdcdc] dark:border-[#4a4a4a] hover:opacity-80 transition-opacity cursor-pointer"
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
-              {/* Project Documents */}
-              <div className="mb-8">
-                <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Documentation</h3>
-                <div className="space-y-2">
-                  {project.documents.map((doc, index) => (
-                    <Link
-                      key={index}
-                      href={doc.url}
-                      className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
-                    >
-                      <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">📄</span>
-                      <span>{doc.name}</span>
-                    </Link>
-                  ))}
+              {/* Project Documents - Only show if documents exist */}
+              {project.documents && project.documents.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Documentation</h3>
+                  <div className="space-y-2">
+                    {project.documents.map((doc, index) => (
+                      <Link
+                        key={index}
+                        href={doc.url}
+                        className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
+                      >
+                        <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">📄</span>
+                        <span>{doc.name}</span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </section>
