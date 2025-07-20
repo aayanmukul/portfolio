@@ -25,13 +25,24 @@ export default function Experience() {
       period: "May 2025 - Present",
       description: "Robotics and autonomous systems research",
       details: [
-        "Engineering communication systems for autonomous mobile robots, focusing on system integration and microelectronic applications for defense technologies.",
-        "Programming a robust autonomous multi-agent coordination and communication system using a novel jam-resistant wireless method constrained to line-of-sight, enhancing resilience in contested environments."
+        ""
         // "Developed MATLAB/Simulink models for DC-DC converter optimization in solar PV systems",
         // "Designed and implemented maximum power point tracking (MPPT) algorithms using perturb-and-observe method", 
         // "Conducted efficiency analysis of buck-boost converters under varying load conditions",
         // "Collaborated with PhD students on grid-tie inverter control strategies",
         // "Presented research findings at the Georgia Tech Undergraduate Research Symposium"
+      ]
+    },
+    {
+      id: "peer-tutor",
+      role: "Peer Tutor",
+      company: "Georgia Institute of Technology",
+      period: "Aug 2022 - Present",
+      description: "Academic tutoring in engineering and mathematics",
+      details: [
+        "Tutored peers in Digital System Design, Signal Processing, Linear Algebra, Calculus I-III, and Differential Equations, helping students improve their understanding and academic performance",
+        "Created personalized curriculum and study materials tailored to each student's learning style and specific areas of difficulty",
+        "Developed effective teaching strategies to explain complex mathematical and engineering concepts in accessible ways"
       ]
     },
     {

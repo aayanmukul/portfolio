@@ -3,9 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navigation from "@/components/ui/Navigation";
+import { projects } from "@/lib/projects";
+import ReactMarkdown from "react-markdown";
 
 export default function Projects() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
   useEffect(() => {
     const darkMode = document.documentElement.classList.contains('dark');
@@ -16,129 +19,6 @@ export default function Projects() {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle('dark');
   };
-
-  const projects = [
-    {
-      id: "neuromorphic-processor",
-      title: "Neuromorphic Computing & Robotics Integration",
-      category: "Emerging Technologies",
-      duration: "Spring 2025",
-      description: "Exploring brain-inspired computing for autonomous robotic control and decision-making systems",
-      technologies: ["Verilog", "CMOS Design", "FPGA", "MATLAB", "Python", "ROS"],
-      details: [
-        "Designed a neuromorphic processor architecture inspired by biological neural networks for robotic control applications",
-        "Implemented spiking neural network (SNN) algorithms in Verilog for real-time pattern recognition and decision-making",
-        "Developed custom CMOS circuits for synaptic weight storage and neural activation functions",
-        "Created FPGA prototype to validate neuromorphic computing principles for autonomous navigation",
-        "Integrated the neuromorphic processor with ROS-based robotic systems for real-time control",
-        "Achieved 40% reduction in power consumption compared to traditional von Neumann architectures for robotic applications"
-      ],
-      images: [
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
-      ],
-      documents: [
-        { name: "Design Report.pdf", url: "#" },
-        { name: "Verilog Code.pdf", url: "#" }
-      ]
-    },
-    {
-      id: "smart-grid-monitor",
-      title: "Smart Grid Monitoring System",
-      category: "Power Systems",
-      duration: "Fall 2024",
-      description: "Real-time power quality monitoring system using IoT sensors and machine learning",
-      technologies: ["Arduino", "Python", "MQTT", "InfluxDB", "Grafana"],
-      details: [
-        "Designed and implemented a distributed sensor network for real-time power quality monitoring",
-        "Developed custom PCBs with current and voltage sensors for three-phase power measurement",
-        "Created MQTT-based communication protocol for sensor data transmission",
-        "Implemented machine learning algorithms in Python for anomaly detection in power consumption",
-        "Built web dashboard using Grafana for real-time visualization of power metrics",
-        "Achieved 99.2% accuracy in detecting power quality events and equipment failures"
-      ],
-      images: [
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
-      ],
-      documents: [
-        { name: "Technical Report.pdf", url: "#" },
-        { name: "Circuit Schematics.pdf", url: "#" }
-      ]
-    },
-    {
-      id: "autonomous-robot",
-      title: "Autonomous Navigation Robot",
-      category: "Robotics & Control",
-      duration: "Spring 2024",
-      description: "Line-following robot with obstacle avoidance using computer vision",
-      technologies: ["Raspberry Pi", "OpenCV", "Python", "ROS", "LIDAR"],
-      details: [
-        "Developed autonomous navigation system combining line-following and obstacle avoidance",
-        "Implemented computer vision algorithms using OpenCV for real-time line detection",
-        "Integrated LIDAR sensor for dynamic obstacle detection and path planning",
-        "Designed PID control system for smooth motor control and trajectory following",
-        "Utilized Robot Operating System (ROS) for modular software architecture",
-        "Achieved 95% success rate in navigating complex indoor environments"
-      ],
-      images: [
-        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800",
-        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800"
-      ],
-      documents: [
-        { name: "Project Report.pdf", url: "#" },
-        { name: "Code Documentation.pdf", url: "#" }
-      ]
-    },
-    {
-      id: "solar-mppt",
-      title: "Solar MPPT Charge Controller",
-      category: "Power Electronics",
-      duration: "Summer 2024",
-      description: "Maximum power point tracking system for solar panel optimization",
-      technologies: ["MATLAB/Simulink", "C++", "PCB Design", "Buck Converter"],
-      details: [
-        "Designed and built a 100W maximum power point tracking charge controller for solar panels",
-        "Implemented perturb-and-observe MPPT algorithm with 97% tracking efficiency",
-        "Created custom PCB design with STM32 microcontroller for real-time control",
-        "Developed buck converter topology for efficient power conversion",
-        "Integrated LCD display and data logging capabilities for performance monitoring",
-        "Conducted extensive testing under varying irradiance and temperature conditions"
-      ],
-      images: [
-        // "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800",
-        // "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800"
-      ],
-      documents: [
-        { name: "Design Specifications.pdf", url: "#" },
-        { name: "Test Results.pdf", url: "#" }
-      ]
-    },
-    {
-      id: "signal-processor",
-      title: "Digital Signal Processing Unit",
-      category: "Digital Systems",
-      duration: "Spring 2023",
-      description: "FPGA-based real-time audio filtering and analysis system",
-      technologies: ["Verilog", "FPGA", "Digital Filters", "MATLAB"],
-      details: [
-        "Designed real-time digital signal processing system on Xilinx FPGA platform",
-        "Implemented FIR and IIR filter architectures in Verilog for audio processing",
-        "Developed FFT algorithm for real-time frequency domain analysis",
-        "Created custom hardware interfaces for audio input/output processing",
-        "Optimized design for minimal latency and maximum throughput",
-        "Successfully processed audio signals with less than 1ms latency"
-      ],
-      images: [
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
-      ],
-      documents: [
-        { name: "FPGA Implementation.pdf", url: "#" },
-        { name: "Performance Analysis.pdf", url: "#" }
-      ]
-    }
-  ];
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'dark bg-[#0a0a0a]' : 'bg-white'}`}>
@@ -177,7 +57,7 @@ export default function Projects() {
             <span className="font-bold">Projects</span> & Research
           </h1>
           <p className="text-lg text-[#8c8c8c] dark:text-[#acacac]">
-            A collection of my electrical engineering projects, from power systems to digital signal processing.
+            A collection of my electrical engineering and software development projects, from robotics and computer vision to web applications and embedded systems.
           </p>
         </section>
 
@@ -195,9 +75,6 @@ export default function Projects() {
                     {project.category}
                   </span>
                 </div>
-                <p className="text-sm text-[#acacac] dark:text-[#8c8c8c] mb-2">
-                  {project.duration}
-                </p>
                 <p className="text-[#585858] dark:text-[#acacac] mb-4 italic">
                   {project.description}
                 </p>
@@ -212,49 +89,104 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Project Details */}
-              <div className="mb-6 space-y-2">
-                {project.details.map((detail, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <span className="text-[#acacac] dark:text-[#8c8c8c] mt-2 text-xs">•</span>
-                    <p className="text-[#585858] dark:text-[#acacac] leading-relaxed">
-                      {detail}
-                    </p>
+              {/* Project Writeup (Markdown) or Details */}
+              {project.writeup ? (
+                <div className="prose prose-neutral dark:prose-invert max-w-none mb-6">
+                  <ReactMarkdown>{project.writeup}</ReactMarkdown>
+                </div>
+              ) : (
+                <div className="mb-6 space-y-2">
+                  {project.details.map((detail, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <span className="text-[#acacac] dark:text-[#8c8c8c] mt-2 text-xs">•</span>
+                      <p className="text-[#585858] dark:text-[#acacac] leading-relaxed">
+                        {detail}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Project Gallery for Buck Converter Simulation only, always at the bottom */}
+              {project.id === "buck-converter-simulation" && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Project Gallery</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {project.images.map((image, index) => (
+                      <div key={index} className="w-full h-48 border border-[#dcdcdc] dark:border-[#4a4a4a] bg-[#f8f8f8] dark:bg-[#222] flex items-center justify-center text-[#b0b0b0] text-sm">
+                        {image ? (
+                          <img
+                            src={image}
+                            alt={`${project.title} Screenshot ${index + 1}`}
+                            className="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                            onClick={() => setModalImage(image)}
+                          />
+                        ) : (
+                          <span>Screenshot Placeholder</span>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-
-              {/* Project Images */}
-              <div className="mb-6">
-                <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Gallery</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {project.images.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image}
-                      alt={`${project.title} ${index + 1}`}
-                      className="w-full h-48 object-cover border border-[#dcdcdc] dark:border-[#4a4a4a] hover:opacity-80 transition-opacity cursor-pointer"
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Project Documents */}
-              <div className="mb-8">
-                <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Documentation</h3>
-                <div className="space-y-2">
-                  {project.documents.map((doc, index) => (
-                    <Link
-                      key={index}
-                      href={doc.url}
-                      className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
+                  {/* Modal for fullscreen image */}
+                  {modalImage && (
+                    <div
+                      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
+                      onClick={() => setModalImage(null)}
                     >
-                      <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">📄</span>
-                      <span>{doc.name}</span>
-                    </Link>
-                  ))}
+                      <div className="relative max-w-3xl w-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
+                        <button
+                          className="absolute top-2 right-2 text-white text-2xl bg-black bg-opacity-60 rounded-full px-3 py-1 hover:bg-opacity-90 focus:outline-none"
+                          onClick={() => setModalImage(null)}
+                          aria-label="Close fullscreen image"
+                        >
+                          ×
+                        </button>
+                        <img
+                          src={modalImage}
+                          alt="Full size project screenshot"
+                          className="max-h-[80vh] w-auto object-contain rounded shadow-lg"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
+              )}
+
+              {/* Project Images - Only show if images exist */}
+              {project.images && project.images.length > 0 && project.id !== "buck-converter-simulation" && (
+                <div className="mb-6">
+                  <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Gallery</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {project.images.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={`${project.title} ${index + 1}`}
+                        className="w-full h-48 object-cover border border-[#dcdcdc] dark:border-[#4a4a4a] hover:opacity-80 transition-opacity cursor-pointer"
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Project Documents - Only show if documents exist */}
+              {project.documents && project.documents.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-lg font-medium text-[#585858] dark:text-[#acacac] mb-3">Documentation</h3>
+                  <div className="space-y-2">
+                    {project.documents.map((doc, index) => (
+                      <Link
+                        key={index}
+                        href={doc.url}
+                        className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
+                      >
+                        <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">📄</span>
+                        <span>{doc.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </section>
@@ -270,7 +202,6 @@ export default function Projects() {
             </Link>
           </div>
           <div className="flex items-center space-x-2">
-            {/* <span>Building the future, one circuit at a time.</span> */}
             <span>⚡</span>
           </div>
         </div>

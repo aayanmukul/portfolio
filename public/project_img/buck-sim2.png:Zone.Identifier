@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://us-east.storage.cloudconvert.com/tasks/cb01637c-a7b9-4c63-869d-a6445cb8b644/Buck-converter-transients-on-state.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20250720%2Fva%2Fs3%2Faws4_request&X-Amz-Date=20250720T164249Z&X-Amz-Expires=86400&X-Amz-Signature=37092af8440cc4eaec735307a11a12ec8fad140d17a77dff37dc0a3c038075cf&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22Buck-converter-transients-on-state.png%22&response-content-type=image%2Fpng&x-id=GetObject

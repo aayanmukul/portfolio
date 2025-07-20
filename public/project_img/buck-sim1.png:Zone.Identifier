@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://us-east.storage.cloudconvert.com/tasks/0202a7b7-9ccc-4640-85f8-9685f68136de/Buck-converter-simulation-schematic.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20250720%2Fva%2Fs3%2Faws4_request&X-Amz-Date=20250720T164225Z&X-Amz-Expires=86400&X-Amz-Signature=1db1b77f283729ad656d8e298fea26f291c5f7d191619db57b8f0cf496101ff5&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22Buck-converter-simulation-schematic.png%22&response-content-type=image%2Fpng&x-id=GetObject

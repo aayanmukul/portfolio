@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Navigation from "@/components/ui/Navigation";
+import { getTopProjects } from "@/lib/projects";
 
 type TabType = "projects" | "experience" | "about" | "contact";
 
@@ -28,37 +29,16 @@ export default function Home() {
         return (
           <section className="mb-8">
             <div className="space-y-3">
-              <Link
-                href="/projects#neuromorphic-processor"
-                className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
-              >
-                <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">→</span>
-                <span>Neuromorphic Computing Processor Design</span>
-              </Link>
-
-              <Link
-                href="/projects#smart-grid-monitor"
-                className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
-              >
-                <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">→</span>
-                <span>Smart Grid Monitoring System</span>
-              </Link>
-
-              <Link
-                href="/projects#autonomous-robot"
-                className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
-              >
-                <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">→</span>
-                <span>Autonomous Navigation Robot</span>
-              </Link>
-
-              <Link
-                href="/projects#solar-mppt"
-                className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
-              >
-                <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">→</span>
-                <span>Solar MPPT Charge Controller</span>
-              </Link>
+              {getTopProjects(3).map((project) => (
+                <Link
+                  key={project.id}
+                  href={`/projects#${project.id}`}
+                  className="flex items-center space-x-3 text-[#585858] hover:text-[#acacac] dark:text-[#acacac] dark:hover:text-[#cccccc] transition-colors group"
+                >
+                  <span className="text-[#acacac] group-hover:text-[#8c8c8c] dark:text-[#8c8c8c] dark:group-hover:text-[#cccccc]">→</span>
+                  <span>{project.title}</span>
+                </Link>
+              ))}
             </div>
 
             {/* View All Projects Link */}
@@ -168,23 +148,23 @@ export default function Home() {
                 </h3>
                 <p className="mb-4">
                   <strong>Academic Foundation:</strong> Complete core electrical engineering coursework 
-                  including advanced circuit design, power electronics, and control systems. Build strong 
-                  technical skills in programming, simulation tools, and hardware design while maintaining 
-                  academic excellence.
+                  including advanced circuit design, power electronics, and control systems. Maintain strong GPA 
+                  while building technical skills in MATLAB/Simulink, Python, and Verilog.
                 </p>
                 <p className="mb-4">
-                  <strong>Research Experience:</strong> Participate in undergraduate research opportunities 
-                  through Georgia Tech's various programs, focusing on power systems, robotics, or 
-                  emerging technologies. Gain hands-on experience with real-world engineering challenges.
+                  <strong>Research Experience:</strong> Participate in undergraduate research through 
+                  Georgia Tech's ORS program or faculty mentorship, focusing on power systems, robotics, or 
+                  emerging technologies. Present findings at research symposiums and conferences.
                 </p>
                 <p className="mb-4">
-                  <strong>Industry Exposure:</strong> Seek internships and co-op opportunities in power electronics, 
-                  robotics, or hardware design companies to gain practical experience and understand 
-                  industry applications of electrical engineering concepts.
+                  <strong>Industry Experience:</strong> Secure internships in power electronics, 
+                  robotics, or hardware design companies to gain practical experience in circuit design 
+                  and system integration.
                 </p>
                 <p className="mb-4">
-                  <strong>Technical Leadership:</strong> Take on leadership roles in technical projects, 
-                  join engineering organizations, and develop skills in project management and team collaboration.
+                  <strong>Technical Leadership:</strong> Lead senior design projects or capstone courses 
+                  related to power systems or robotics. Join technical organizations to develop leadership 
+                  skills and professional networks.
                 </p>
               </div>
 
@@ -193,19 +173,19 @@ export default function Home() {
                   Long-Term Goals
                 </h3>
                 <p className="mb-4">
-                  <strong>Graduate Education:</strong> Pursue advanced education in Electrical Engineering, 
-                  potentially specializing in power systems, robotics, or emerging technologies. This could 
-                  include a Master's degree or other advanced training opportunities.
+                  <strong>Graduate Education:</strong> Pursue advanced education in Electrical Engineering 
+                  with focus on power systems or robotics. Consider specializing in emerging technologies 
+                  like neuromorphic computing or advanced power electronics.
                 </p>
                 <p className="mb-4">
                   <strong>Industry Experience:</strong> Work as a research engineer or hardware designer 
-                  in innovative companies or research institutions. Focus on developing cutting-edge solutions 
-                  in power electronics, autonomous systems, or AI hardware applications.
+                  in innovative companies or research institutions. Focus on developing solutions in power 
+                  electronics, autonomous systems, or AI hardware while building expertise in emerging technologies.
                 </p>
                 <p className="mb-4">
-                  <strong>Research Leadership:</strong> Contribute to breakthrough technologies and potentially 
-                  lead research teams developing next-generation electrical systems. This could involve 
-                  pursuing a PhD or advancing to research leadership roles in industry.
+                  <strong>Research Leadership:</strong> Lead research teams developing next-generation 
+                  electrical systems. Contribute to breakthrough technologies in power systems, robotics, or 
+                  neuromorphic computing, potentially pursuing advanced research roles in industry or academia.
                 </p>
               </div>
 
@@ -215,28 +195,28 @@ export default function Home() {
                 </h3>
                 <p className="mb-4">
                   <strong>1. Academic Preparation:</strong> Complete advanced courses in power electronics, 
-                  control systems, and digital design. Build strong relationships with faculty and maintain 
-                  academic performance that opens doors to research and internship opportunities.
+                  control systems, and digital design. Maintain strong academic performance and develop 
+                  relationships with faculty for research opportunities and recommendations.
                 </p>
                 <p className="mb-4">
-                  <strong>2. Research Involvement:</strong> Join research teams or work with faculty on 
-                  projects related to power systems, robotics, or emerging technologies. Participate in 
-                  undergraduate research programs and present findings at appropriate venues.
+                  <strong>2. Research Involvement:</strong> Join research teams focused on power systems 
+                  or robotics, or work with faculty on emerging technology research. Participate in 
+                  undergraduate research and present findings at conferences or symposiums.
                 </p>
                 <p className="mb-4">
-                  <strong>3. Industry Connections:</strong> Attend career fairs, networking events, and 
-                  technical workshops. Join professional organizations and seek mentorship from industry 
-                  professionals in relevant fields.
+                  <strong>3. Industry Connections:</strong> Attend career fairs, networking events, 
+                  and technical workshops to build professional connections. Join professional organizations 
+                  and seek mentorship from industry professionals in relevant fields.
                 </p>
                 <p className="mb-4">
-                  <strong>4. Technical Skills Development:</strong> Master industry-standard tools and 
-                  build a portfolio of projects demonstrating expertise in power systems, circuit design, 
-                  and emerging technologies.
+                  <strong>4. Technical Skills Development:</strong> Master industry-standard tools 
+                  for circuit design, robotics, and simulation software. Build a portfolio of projects 
+                  demonstrating expertise in power systems, circuit design, and emerging technologies.
                 </p>
                 <p className="mb-4">
-                  <strong>5. Leadership and Communication:</strong> Take on leadership roles in technical 
-                  organizations, mentor junior students, and develop strong presentation and communication 
-                  skills essential for career advancement.
+                  <strong>5. Leadership and Communication:</strong> Take on leadership roles in 
+                  technical organizations, mentor junior students, and develop strong presentation and 
+                  communication skills. These skills are crucial for advancing to research leadership positions.
                 </p>
               </div>
 
@@ -366,7 +346,7 @@ export default function Home() {
           </Link>
           {/* Mobile Navigation */}
           <div className="md:hidden">
-            <Navigation isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+          <Navigation isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
           </div>
         </div>
       </header>
